@@ -15,9 +15,21 @@ class Encryption:
                     'W', 'X', 'Y', 'Z', '1', '2', '3', '4',
                     '5', '6', '7', '8', '9', '0', '!', '@',
                     '#', '$', '%', '^', '&', '*', '(', ')']
-       
-       encryption_key = ""
+        encryption_key = ""
         for x in range(1,17):
             encryption_key += random.choice(charlist)
-            
         return encryption_key
+
+    def isValidPass(self, count, EK):
+        p = input("Password: ")
+        ekPass = ""
+        if p != self.password:
+            print("Invalid Password")
+            print("%d attempts left\n" % (2-count))
+            self.validPass = False
+        else:
+            print("Welcome! ")
+            ekPass = EK
+            self.validPass = True
+        return ekPass
+    
