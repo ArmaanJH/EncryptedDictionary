@@ -1,4 +1,6 @@
 import random
+import time
+import os
 
 class Encryption:
     def __init__(self, password):
@@ -28,8 +30,29 @@ class Encryption:
             print("%d attempts left\n" % (2-count))
             self.validPass = False
         else:
+            print('\n' * 1000)  # if program is ran in IDE like pycharm that inhibits os functions
+            os.system('cls' if os.name == 'nt' else 'clear')  # clears previous lines if ran in command/terminal
             print("Welcome! ")
             ekPass = EK
             self.validPass = True
         return ekPass
+
+    def logout(self, password):
+        print("Logout Successful!")
+        print("------------------")
+        passw = ""
+        count = 0
+        while passw != password:
+            passw = input("Please Enter your password: ")
+            if passw == password:
+                print("Welcome!")
+                break
+            else:
+                print("Invalid password")
+                print("%d attempts left\n" % (2-count))
+                count += 1
+                if count == 3:
+                    while True:
+                        print("Wrong password entered too many times! Please restart console")
+                        time.sleep(2)
     
