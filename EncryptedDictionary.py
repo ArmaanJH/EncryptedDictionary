@@ -1,5 +1,5 @@
 from EncryptionClass import Encryption
-# from DictionaryClass import Dict
+from DictionaryClass import Dict
 import time
 import os
 
@@ -33,6 +33,7 @@ while encrypt.validPass is False:
 
 if EK2 == EK:
     choice = 1
+    UserDict = {}
     while True:
         print("------------------------------")
         print("")
@@ -51,22 +52,26 @@ if EK2 == EK:
             break
 
         elif choice == "1":
-            print("Place holder")
-            
+            Dict.KeyandVal()
+
         elif choice == "2":
-            print("Place holder")
-            
+            key = input("Which key value would you like to change?: ")
+            Dict.ChangeVal(key)
+
         elif choice == "3":
-            print("Place holder")
-            
+            key1 = input("Enter first key: ")
+            key2 = input("Enter second key: ")
+            Dict.SwapVal(key1, key2)
+            print("Values Swaped!")
+
         elif choice == "4":
-            print("Place holder")
-            
+            Dict.display(UserDict)
+
         elif choice == "5":
-            print("Place holder")
+            Dict.export(UserDict)
 
         elif choice == "6":
             encrypt.logout(passw1)
-            
+
         else:
             print("Error: Invalid choice. Please choose again")
