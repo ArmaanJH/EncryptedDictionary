@@ -1,12 +1,19 @@
 class Dict:
     def __init__(self):
-        self.key = ""
-        self.value = 0
+        UserDict = {}
 
-    def KeyandVal(self):
-        
+    def KeyandVal(self, dic, key, val):
+        dic[key] = val
+
     def ChangeVal(self, key):
+        print("unfinished")
 
     def SwapVal(self, key1, key2):
+        print("unfinished")
 
-    def display(self, dict):
+    def display(self, dic):
+        print("unfinished")
+
+    def export(self):
+       # f = open("New_Data.txt", 'w')
+        
