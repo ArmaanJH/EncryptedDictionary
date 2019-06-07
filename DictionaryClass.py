@@ -1,19 +1,27 @@
 class Dict:
     def __init__(self):
-        UserDict = {}
+        self.UserDict = {}
+
+    def __setitem__(self, key, item):
+        self.__dict__[key] = item
+
+    # def __getitem__(self, key):
+        # self.__dict__[key]
 
     def KeyandVal(self, dic, key, val):
         dic[key] = val
 
-    def ChangeVal(self, key):
-        print("unfinished")
+    def SwapVal(self, dic, key1, key2):
+        temp = ""
+        temp = dic[key1]
+        dic[key1] = dic[key2]
+        dic[key2] = temp
 
-    def SwapVal(self, key1, key2):
-        print("unfinished")
+    def display(self, dic):  # need to make work
+        for dic.UserDict.key, dic.UserDict.value in dic.UserDict:
+            print(dic.UserDict[key1])
+            print(dic.UserDict[key2])
 
-    def display(self, dic):
-        print("unfinished")
-
-    def export(self):
-       # f = open("New_Data.txt", 'w')
+    def export(self):  # need to finish
+        f = open("New_Data.txt", 'w')
         
