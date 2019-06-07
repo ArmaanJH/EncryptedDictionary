@@ -52,18 +52,19 @@ if EK2 == EK:
             break
 
         elif choice == "1":
-            keyname = input("What would you like to name this key?: ")
+            key = input("What would you like to name this key?: ")
             val = input("What would you like its value to be?: ")
-            UserDict.KeyandVal(UserDict, keyname, val)
+            UserDict.KeyandVal(UserDict, key, val)
 
         elif choice == "2":
             key = input("Which key value would you like to change?: ")
-            UserDict.ChangeVal(key)
+            val = input("Enter new value: ")
+            UserDict.KeyandVal(UserDict, key, val)
 
         elif choice == "3":
             key1 = input("Enter first key: ")
             key2 = input("Enter second key: ")
-            UserDict.SwapVal(key1, key2)
+            UserDict.SwapVal(UserDict, key1, key2)
             print("Values Swaped!")
 
         elif choice == "4":
