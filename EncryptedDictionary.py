@@ -33,7 +33,7 @@ while encrypt.validPass is False:
 
 if EK2 == EK:
     choice = 1
-    UserDict = {}
+    UserDict = Dict()
     while True:
         print("------------------------------")
         print("")
@@ -52,23 +52,25 @@ if EK2 == EK:
             break
 
         elif choice == "1":
-            Dict.KeyandVal()
+            keyname = input("What would you like to name this key?: ")
+            val = input("What would you like its value to be?: ")
+            UserDict.KeyandVal(UserDict, keyname, val)
 
         elif choice == "2":
             key = input("Which key value would you like to change?: ")
-            Dict.ChangeVal(key)
+            UserDict.ChangeVal(key)
 
         elif choice == "3":
             key1 = input("Enter first key: ")
             key2 = input("Enter second key: ")
-            Dict.SwapVal(key1, key2)
+            UserDict.SwapVal(key1, key2)
             print("Values Swaped!")
 
         elif choice == "4":
-            Dict.display(UserDict)
+            UserDict.display(UserDict)
 
         elif choice == "5":
-            Dict.export(UserDict)
+            UserDict.export(UserDict)
 
         elif choice == "6":
             encrypt.logout(passw1)
