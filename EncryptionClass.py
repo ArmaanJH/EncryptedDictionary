@@ -45,6 +45,8 @@ class Encryption:
         while passw != password:
             passw = input("Please Enter your password: ")
             if passw == password:
+                print('\n' * 1000)  # if program is ran in IDE like pycharm that inhibits os functions
+                os.system('cls' if os.name == 'nt' else 'clear')  # clears previous lines if ran in command/terminal
                 print("Welcome!")
                 break
             else:
@@ -55,4 +57,3 @@ class Encryption:
                     while True:
                         print("Wrong password entered too many times! Please restart console")
                         time.sleep(2)
-    
